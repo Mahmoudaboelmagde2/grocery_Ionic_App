@@ -1,0 +1,116 @@
+<!--
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : Grocery This App Template Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+ -->
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="onBack()" color="primary">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{name}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary">
+        <ion-icon slot="icon-only" name="share-social-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="product-info">
+    <div class="cover">
+      <div [ngStyle]="{'background-image': 'url('+cover+')'}" class="img"></div>
+      <div class="imgs"> <ion-icon slot="start" name="image-outline" color="primary"></ion-icon> <ion-label
+          class="count">&nbsp; 15</ion-label> </div>
+    </div>
+
+    <div class="name">
+      <ion-label class="title">{{name}}</ion-label>
+      <ion-label class="value">{{value}}</ion-label>
+      <ion-label class="price"> <span class="active">₹ {{price}}</span> &nbsp; <span class="deactive">₹
+          296</span>
+      </ion-label>
+    </div>
+
+    <div class="break"></div>
+    <ion-label class="head-title">Product Details</ion-label>
+    <ion-label class="sub-title">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+      standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+      type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+      remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+      Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+      of Lorem Ipsum.
+    </ion-label>
+    <ion-label class="head-title">Disclaimer</ion-label>
+    <ion-label class="sub-title">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+      standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+      type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+      remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+      Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+      of Lorem Ipsum.
+    </ion-label>
+    <ion-label class="head-title">Highlight</ion-label>
+    <ion-label class="sub-title">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+      standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+      type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+      remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+      Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+      of Lorem Ipsum.
+    </ion-label>
+    <ion-label class="head-title">Maybe You Likes</ion-label>
+    <div class="slider">
+      <swiper-container #swiper slides-per-view="2.2" space-between="10" initial-slide="1">
+        <swiper-slide *ngFor="let item of util.productsList.slice(0,6);let i = index;">
+          <div class="product-content" (click)="onProductInfo(i)">
+            <div class="badge"> <ion-label class="lbl-off">{{item.off}}%</ion-label> </div>
+            <div class="image" [ngStyle]="{'background-image': 'url('+item.images+')'}"></div>
+            <ion-label class="title">{{item.name}}</ion-label>
+            <ion-label class="value">{{item.value}}</ion-label>
+            <ion-label class="price"> <span class="active">₹ {{item.price}}</span> &nbsp; <span class="deactive">₹
+                296</span>
+            </ion-label>
+            <div class="add-btn" *ngIf="i % 2 == 0">
+              <div class="btn">
+                <ion-icon slot="icon-only" name="add-circle-outline" class="icon-name"></ion-icon>
+              </div>
+            </div>
+
+            <div class="cart-btn" *ngIf="i % 2 != 0">
+              <div class="btn">
+                <ion-icon slot="icon-only" name="remove-circle-outline" class="icon-name"></ion-icon>
+              </div>
+              <ion-label class="lbl">{{i}}</ion-label>
+              <div class="btn">
+                <ion-icon slot="icon-only" name="add-circle-outline" class="icon-name"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+      </swiper-container>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col size="2">
+        <ion-button expand="block" color="medium">
+          <ion-icon slot="icon-only" name="bag-handle-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="10">
+        <ion-button expand="block" color="primary">
+          Buy ₹{{price}}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

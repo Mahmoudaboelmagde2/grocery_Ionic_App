@@ -1,0 +1,56 @@
+<!--
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : Grocery This App Template Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+ -->
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="onBack()" color="primary">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Recommend For You</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="horizontal-list">
+    <ion-row class="product-list" *ngFor="let item of util.productsList;let i = index;" (click)="onProductInfo(i)">
+      <ion-col size="3">
+        <div class="image">
+          <div class="badge"> <ion-label class="lbl-off">{{item.off}}%</ion-label> </div>
+          <div class="img" [ngStyle]="{'background-image': 'url('+item.images+')'}"></div>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div class="product-info">
+          <ion-label class="title">{{item.name}}</ion-label>
+          <ion-label class="value">{{item.value}}</ion-label>
+          <ion-label class="price"> <span class="active">₹ {{item.price}}</span> &nbsp; <span class="deactive">₹
+              296</span>
+          </ion-label>
+        </div>
+      </ion-col>
+      <ion-col size="3">
+        <div class="add-btn" *ngIf="i % 2 == 0">
+          <div class="btn">
+            <ion-icon slot="icon-only" name="add-circle-outline" class="icon-name"></ion-icon>
+          </div>
+        </div>
+
+        <div class="cart-btn" *ngIf="i % 2 != 0">
+          <div class="btn">
+            <ion-icon slot="icon-only" name="remove-circle-outline" class="icon-name"></ion-icon>
+          </div>
+          <ion-label class="lbl">{{i}}</ion-label>
+          <div class="btn">
+            <ion-icon slot="icon-only" name="add-circle-outline" class="icon-name"></ion-icon>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

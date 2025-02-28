@@ -1,0 +1,70 @@
+<!--
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : Grocery This App Template Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+ -->
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-button color="primary">
+        <ion-icon slot="icon-only" name="bag-handle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>My Orders</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary" (click)="onNotification()">
+        <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+      </ion-button>
+      <ion-button color="primary" (click)="onPromos()">
+        <ion-icon slot="icon-only" name="ticket-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment value="completed" mode="md" color="primary">
+      <ion-segment-button value="completed">
+        <ion-label>Completed</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="progress">
+        <ion-label>On Progress</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="cancelled">
+        <ion-label>Cancelled</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="order-list">
+    <ion-card class="order" *ngFor="let item of util.ordersList" (click)="onDetails(item.id)">
+      <div class="head">
+        <div class="status" [ngStyle]="{'background-color': item.background}"><ion-label class="status-lbl"
+            [ngStyle]="{'color': item.color}">{{item.status}}</ion-label></div>
+        <ion-label class="date">{{item.date}}</ion-label>
+      </div>
+
+      <div class="invoice-info">
+        <div class="info">
+          <ion-label class="info-title">Transaction ID</ion-label>
+          <ion-label class="bold-title">#{{item.id}}</ion-label>
+        </div>
+        <div class="info">
+          <ion-label class="info-title">Delivered to</ion-label>
+          <ion-label class="bold-title">My Home</ion-label>
+        </div>
+        <div class="info">
+          <ion-label class="info-title">Total Payment</ion-label>
+          <ion-label class="bold-title">₹ {{item.amount}}</ion-label>
+        </div>
+      </div>
+
+      <div class="items" *ngFor="let item of util.productsList.slice(0,4)">
+        <ion-label class="item-title">{{item.name}}</ion-label>
+        <ion-label class="item-price">₹ {{item.price}}</ion-label>
+      </div>
+    </ion-card>
+  </div>
+</ion-content>

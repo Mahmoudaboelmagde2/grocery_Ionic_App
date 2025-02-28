@@ -1,0 +1,97 @@
+<!--
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : Grocery This App Template Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+ -->
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-button color="primary">
+        <ion-icon slot="icon-only" name="bag-handle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Account</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary" (click)="onNotification()">
+        <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+      </ion-button>
+      <ion-button color="primary" (click)="onPromos()">
+        <ion-icon slot="icon-only" name="ticket-outline"></ion-icon>
+      </ion-button>
+      <ion-button color="primary">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-item lines="none" class="title-search-item" (click)="onSearch()">
+      <ion-label class="lbl">Fruits, Vegetables, Eggs.</ion-label>
+      <ion-icon slot="end" name="search-outline" color="medium" class="search-icon"></ion-icon>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="account-screen">
+    <div class="profile-content">
+      <div class="user-cover" [ngStyle]="{'background-image': 'url(assets/images/cover.jpg)'}"></div>
+      <ion-label class="name">Johnson Krishnan</ion-label>
+      <ion-label class="email">johnson.krishnan@gmail.com</ion-label>
+      <div class="break"></div>
+      <ion-button expand="block" color="primary">
+        <ion-icon slot="start" name="create-outline"></ion-icon>
+        Edit Profile
+      </ion-button>
+    </div>
+
+    <div class="item-content">
+      <div class="lbl-account">
+        <ion-label class="title-lbl-account">Profile Settings </ion-label>
+        <ion-label class="sub-title-account">Change Your Basic Profile</ion-label>
+      </div>
+      <ion-icon slot="start" name="chevron-forward-outline" color="primary"></ion-icon>
+    </div>
+
+    <div class="item-content" (click)="onPromocode()">
+      <div class="lbl-account">
+        <ion-label class="title-lbl-account">Promos </ion-label>
+        <ion-label class="sub-title-account">Latest Promo from us</ion-label>
+      </div>
+      <ion-icon slot="start" name="chevron-forward-outline" color="primary"></ion-icon>
+    </div>
+
+    <div class="item-content" (click)="onAddress()">
+      <div class="lbl-account">
+        <ion-label class="title-lbl-account">My Address </ion-label>
+        <ion-label class="sub-title-account">Your Address</ion-label>
+      </div>
+      <ion-icon slot="start" name="chevron-forward-outline" color="primary"></ion-icon>
+    </div>
+
+    <div class="item-content" (click)="onHelp()">
+      <div class="lbl-account">
+        <ion-label class="title-lbl-account">Terms, Privacy, & Policy </ion-label>
+        <ion-label class="sub-title-account">Things You may want know</ion-label>
+      </div>
+      <ion-icon slot="start" name="chevron-forward-outline" color="primary"></ion-icon>
+    </div>
+
+    <div class="item-content" (click)="onHelp()">
+      <div class="lbl-account">
+        <ion-label class="title-lbl-account">Help & Support </ion-label>
+        <ion-label class="sub-title-account">Get support from us</ion-label>
+      </div>
+      <ion-icon slot="start" name="chevron-forward-outline" color="primary"></ion-icon>
+    </div>
+
+    <div class="item-content">
+      <div class="lbl-account">
+        <ion-label class="title-lbl-account">Logout</ion-label>
+        <ion-label class="sub-title-account">Sign out From this session</ion-label>
+      </div>
+      <ion-icon slot="start" name="chevron-forward-outline" color="primary"></ion-icon>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,50 @@
+<!--
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : Grocery This App Template Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+ -->
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="onBack()" color="primary">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Promos Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+  <div class="promo-details">
+    <div class="promo-cover" [ngStyle]="{'background-image': 'url('+url+')'}"></div>
+    <ion-label class="title">Free Delivery Every Buy Long Bread Only At New York</ion-label>
+    <ion-label class="sub-title">Valid for 15 days</ion-label>
+    <div class="head-title">
+      <ion-label class="small-text">Available</ion-label>
+      <ion-label class="small-text">15 July 2023</ion-label>
+    </div>
+    <ion-label class="title-lbl">Highlights</ion-label>
+    <ion-label class="small-lbl">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+      has been the industry's
+      standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+      type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+      remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+      Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+      of Lorem Ipsum.</ion-label>
+
+    <ion-item lines="none" class="item-content" detail="">
+      <ion-icon slot="start" name="information-circle-outline" color="warning"></ion-icon>
+      <ion-label>Terms and Conditions</ion-label>
+    </ion-item>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" color="primary">
+      Claim Promo Voucher
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

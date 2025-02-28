@@ -1,0 +1,53 @@
+<!--
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : Grocery This App Template Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+ -->
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="onBack()" color="primary">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Add New Address</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="new-address">
+    <ion-item class="address-input" lines="none">
+      <ion-label position="stacked">Title</ion-label>
+      <ion-input type="text" placeholder="Home"></ion-input>
+    </ion-item>
+
+    <ion-item class="address-input" lines="none">
+      <ion-label position="stacked">Street</ion-label>
+      <ion-input type="text" placeholder="1947 Colorado"></ion-input>
+    </ion-item>
+
+    <ion-item class="address-input" lines="none">
+      <ion-label position="stacked">City</ion-label>
+      <ion-input type="text" placeholder="California"></ion-input>
+    </ion-item>
+
+    <ion-item class="address-input" lines="none">
+      <ion-label position="stacked">Zip Code</ion-label>
+      <ion-input type="text" placeholder="000000"></ion-input>
+    </ion-item>
+
+    <ion-item class="primary-button" lines="none">
+      <ion-label>Set as primary</ion-label>
+      <ion-checkbox slot="end" mode="md"></ion-checkbox>
+    </ion-item>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" color="primary">
+      Submit
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,39 @@
+<!--
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : Grocery This App Template Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+ -->
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="onBack()" color="primary">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Saved Addresses</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary" (click)="addNewAddress()">
+        <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="address-list">
+    <div class="address-name" *ngFor="let item of [1,2,3,4,5,6,7,8]">
+      <ion-label class="ion-text-wrap">
+        <ion-text color="dark">
+          <h3 class="name-title">Home</h3>
+        </ion-text>
+        <ion-text color="dark">
+          <h5 class="address-title">110 Main St Roseville California 95678 Colorado Colorado Springs 1908
+            Southgate Rd United States Oceane
+            Berge </h5>
+        </ion-text>
+      </ion-label>
+    </div>
+  </div>
+</ion-content>

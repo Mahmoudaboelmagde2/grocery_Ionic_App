@@ -1,0 +1,58 @@
+<!--
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : Grocery This App Template Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+ -->
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="onBack()" color="primary">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Add Card</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="add-card">
+    <ion-item lines="none" class="item-content">
+      <ion-input placeholder="Card Number" type="number"></ion-input>
+      <ion-icon slot="end" name="card-outline" color="primary"></ion-icon>
+    </ion-item>
+
+    <ion-row>
+      <ion-col size="6">
+        <ion-item class="item-content" lines="none">
+          <ion-input type="number" placeholder="Exp Date (MM/YY)"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item class="item-content" lines="none">
+          <ion-input type="number" placeholder="CVV"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-item lines="none" class="item-content">
+      <ion-input placeholder="Card Holder Name" type="text"></ion-input>
+      <ion-icon slot="end" name="person-outline" color="primary"></ion-icon>
+    </ion-item>
+
+    <ion-item lines="none" class="item-content">
+      <ion-input placeholder="Email Address" type="email"></ion-input>
+      <ion-icon slot="end" name="mail-outline" color="primary"></ion-icon>
+    </ion-item>
+
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" (click)="onSuccess()">
+      Save and Continue
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

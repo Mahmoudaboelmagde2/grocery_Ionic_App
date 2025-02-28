@@ -1,0 +1,95 @@
+<!--
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : Grocery This App Template Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+ -->
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="onBack()" color="primary">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Transaction ID #{{id}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="order-details">
+    <ion-label class="sub-title">15 July, 2022</ion-label>
+    <div class="break"></div>
+    <ion-label class="title">Order Status</ion-label>
+    <div class="tracking_div">
+
+      <div class="left">
+        <span *ngFor="let item of tracking;let i = index;">
+          <div class="line_div" [class.line_div_darkgray]="item.status == 1" *ngIf="i != 0"></div>
+          <ion-icon *ngIf="item.status == 1" name="checkmark-sharp"></ion-icon>
+        </span>
+
+      </div>
+
+      <div class="right">
+        <span *ngFor="let item of tracking">
+          <div class="line_div">
+            <ion-label [class.round_div_red]="item.status == 1" [class.round_div_darkgray]="item.status == 1">
+              {{item.time}}</ion-label>
+          </div>
+          <div class="round_div_gray" [class.round_div_red]="item.status == 1"
+            [class.round_div_darkgray]="item.status == 1">
+            {{item.value}}
+          </div>
+        </span>
+      </div>
+
+    </div>
+
+    <div class="break"></div>
+
+    <ion-label class="title">Destination</ion-label>
+    <ion-label class="sub-title">110 Main St Roseville California 95678</ion-label>
+
+    <div class="break"></div>
+
+    <ion-label class="title">Courier</ion-label>
+    <ion-item lines="none" detail="" class="courier_item">
+      <ion-avatar slot="start">
+        <img src="assets/images/logo.png" />
+      </ion-avatar>
+      <ion-label class="ion-text-wrap ion-padding">
+        <ion-text color="dark">
+          <h3 class="name-title">Grocery Courier</h3>
+        </ion-text>
+        <ion-text color="dark">
+          <h5 class="time-title">11:00 AM - 12:00 PM</h5>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+
+    <div class="break"></div>
+
+    <div class="invoice-info">
+      <div class="info">
+        <ion-label class="info-title">Transaction ID</ion-label>
+        <ion-label class="bold-title">#{{id}}</ion-label>
+      </div>
+      <div class="info">
+        <ion-label class="info-title">Delivered to</ion-label>
+        <ion-label class="bold-title">My Home</ion-label>
+      </div>
+      <div class="info">
+        <ion-label class="info-title">Total Payment</ion-label>
+        <ion-label class="bold-title">₹ 15797.66</ion-label>
+      </div>
+    </div>
+
+    <div class="break"></div>
+
+    <div class="items" *ngFor="let item of util.productsList.slice(0,4)">
+      <ion-label class="item-title">{{item.name}}</ion-label>
+      <ion-label class="item-price">₹ {{item.price}}</ion-label>
+    </div>
+  </div>
+</ion-content>

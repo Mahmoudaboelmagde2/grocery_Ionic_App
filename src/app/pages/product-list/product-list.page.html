@@ -1,0 +1,78 @@
+<!--
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : Grocery This App Template Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+ -->
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="onBack()" color="primary">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{name}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary">
+        <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+      </ion-button>
+      <ion-button color="primary">
+        <ion-icon slot="icon-only" name="share-social-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="shop-screen">
+    <ion-row class="product-list">
+      <ion-col size="6" *ngFor="let item of util.productsList;let i = index;">
+        <div class="product-content" (click)="onProductInfo(i)">
+          <div class="badge"> <ion-label class="lbl-off">{{item.off}}%</ion-label> </div>
+          <div class="image" [ngStyle]="{'background-image': 'url('+item.images+')'}"></div>
+          <ion-label class="title">{{item.name}}</ion-label>
+          <ion-label class="value">{{item.value}}</ion-label>
+          <ion-label class="price"> <span class="active">₹ {{item.price}}</span> &nbsp; <span class="deactive">₹
+              296</span>
+          </ion-label>
+          <div class="add-btn" *ngIf="i % 2 == 0">
+            <div class="btn">
+              <ion-icon slot="icon-only" name="add-circle-outline" class="icon-name"></ion-icon>
+            </div>
+          </div>
+
+          <div class="cart-btn" *ngIf="i % 2 != 0">
+            <div class="btn">
+              <ion-icon slot="icon-only" name="remove-circle-outline" class="icon-name"></ion-icon>
+            </div>
+            <ion-label class="lbl">{{i}}</ion-label>
+            <div class="btn">
+              <ion-icon slot="icon-only" name="add-circle-outline" class="icon-name"></ion-icon>
+            </div>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button fill="clear" color="medium" expand="block">
+          <ion-icon slot="start" name="funnel-outline"></ion-icon>
+          Filter
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button fill="clear" color="medium" expand="block">
+          <ion-icon slot="start" name="cellular-outline"></ion-icon>
+          Sort
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

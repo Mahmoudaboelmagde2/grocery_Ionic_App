@@ -1,0 +1,105 @@
+<!--
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : Grocery This App Template Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+ -->
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="onBack()" color="primary">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Review Order</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="review-cart">
+    <div class="break-title">
+      <ion-label class="title">Your Order</ion-label>
+    </div>
+
+    <div class="order-list" *ngFor="let item of util.productsList.slice(0,4);let i = index">
+      <div class="name">
+        <div class="quantity">
+          <ion-label class="title">X{{i+1}} </ion-label>
+        </div>
+        <ion-label class="title-name">{{item.name}}</ion-label>
+      </div>
+      <ion-label class="price">₹ {{item.price}}</ion-label>
+    </div>
+
+    <div class="break-title-other">
+      <ion-label class="title">Fees</ion-label>
+    </div>
+
+    <div class="order-list">
+      <div class="name">
+        <ion-label class="title-name">Shipping</ion-label>
+      </div>
+      <ion-label class="price">FREE</ion-label>
+    </div>
+
+    <div class="order-list">
+      <div class="name">
+        <ion-label class="title-name">Est Tax</ion-label>
+      </div>
+      <ion-label class="price">FREE</ion-label>
+    </div>
+
+    <div class="order-list">
+      <div class="name">
+        <ion-label class="title-name-bold">Total</ion-label>
+      </div>
+      <ion-label class="price-bold">₹ 15797.33</ion-label>
+    </div>
+
+    <div class="break-title-other">
+      <ion-label class="title">Destination</ion-label>
+    </div>
+
+    <ion-item lines="none" class="address-item">
+      <ion-thumbnail slot="start">
+        <img src="assets/images/distance.png" />
+      </ion-thumbnail>
+      <ion-label class="ion-text-wrap ion-padding">110 Main St Roseville California 95678 Colorado Colorado Springs 1908
+        Southgate Rd United States Oceane
+        Berge </ion-label>
+    </ion-item>
+
+    <div class="break-title-other">
+      <ion-label class="title">Pick up Time</ion-label>
+    </div>
+
+    <ion-item class="time" lines="none">
+      <ion-icon slot="start" name="time-outline" color="primary"></ion-icon>
+      <ion-label>Fri, 15 July 2022</ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline" color="primary"></ion-icon>
+    </ion-item>
+
+    <ion-item class="time" lines="none">
+      <ion-icon slot="start" name="time-outline" color="primary"></ion-icon>
+      <ion-label>Pickup Time 03:30 - 04:00 Hours</ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline" color="primary"></ion-icon>
+    </ion-item>
+
+    <div class="break-title-other">
+      <ion-label class="title">Order Notes</ion-label>
+    </div>
+
+    <ion-item class="notes" lines="none">
+      <ion-textarea rows="6" placeholder="Add notes"></ion-textarea>
+    </ion-item>
+
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" (click)="onCheckout()">
+      Checkout
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

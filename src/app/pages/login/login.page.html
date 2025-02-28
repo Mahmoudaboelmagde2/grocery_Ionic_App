@@ -1,0 +1,56 @@
+<!--
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : Grocery This App Template Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+ -->
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="onBack()" color="primary">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="login-screen">
+    <ion-label class="title">Let's get started</ion-label>
+    <ion-label class="sub-title">Sign in with your account to see our top picks for you!</ion-label>
+
+    <div class="break"></div>
+
+    <ion-item lines="none" class="input-content">
+      <ion-icon slot="end" name="mail-outline" color="primary"></ion-icon>
+      <ion-input type="email" placeholder="Email"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="input-content">
+      <ion-input [type]="viewPassword == true ? 'text':'password'" placeholder="Password"></ion-input>
+      <ion-icon slot="end" (click)="togglePassword()" color="primary"
+        [name]="viewPassword == true ? 'eye-outline':'eye-off-outline'"></ion-icon>
+    </ion-item>
+
+    <div class="break"></div>
+
+    <ion-button expand="block" color="primary" (click)="onHome()">
+      Sign In
+    </ion-button>
+
+    <div class="break"></div>
+    <ion-label class="or-btn">or</ion-label>
+    <div class="break"></div>
+
+    <ion-button expand="block" color="medium" fill="outline" class="other-btn" (click)="onHome()">
+      <ion-icon slot="start" name="logo-apple" color="medium"></ion-icon>
+      Sign in with Apple
+    </ion-button>
+
+    <ion-button expand="block" color="medium" fill="outline" class="other-btn" (click)="onHome()">
+      <ion-icon slot="start" name="logo-google" color="medium"></ion-icon>
+      Sign in with Google
+    </ion-button>
+  </div>
+</ion-content>

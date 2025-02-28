@@ -1,0 +1,117 @@
+<!--
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : Grocery This App Template Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+ -->
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-button color="primary">
+        <ion-icon slot="icon-only" name="bag-handle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Grocery</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary" (click)="onNotification()">
+        <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+      </ion-button>
+      <ion-button color="primary" (click)="onPromos()">
+        <ion-icon slot="icon-only" name="ticket-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-item lines="none" class="title-search-item" (click)="onSearch()">
+      <ion-label class="lbl">Fruits, Vegetables, Eggs.</ion-label>
+      <ion-icon slot="end" name="search-outline" color="medium" class="search-icon"></ion-icon>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="shop-screen">
+    <ion-row class="order-again">
+      <ion-col size="2">
+        <div class="user-cover" [ngStyle]="{'background-image': 'url(assets/images/cover.jpg)'}"></div>
+      </ion-col>
+      <ion-col size="7">
+        <ion-label class="ion-text-wrap" class="lbl">
+          <ion-text color="dark">
+            <h3 class="title">Hi Johnson, time for shopping</h3>
+          </ion-text>
+          <p class="sub-title">Milk, broccoli and +9 others</p>
+        </ion-label>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button expand="block" fill="clear" size="small" color="primary">
+          Order again
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <div class="title-list">
+      <ion-label class="head-title">What do you looking for?</ion-label>
+      <ion-button (click)="onRecommendList()" fill="clear" shape="round" size="small">
+        See more
+      </ion-button>
+    </div>
+    <div class="cate_list">
+      <ion-row class="cate-content">
+        <ion-col size="3" *ngFor="let item of util.cateList" (click)="onProductList(item.name)">
+          <div class="cate-info">
+            <div class="cate-image">
+              <img [src]="item.image" alt="" class="img">
+            </div>
+            <ion-label class="name">{{item.name}}</ion-label>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="title-list">
+      <ion-label class="head-title">Promos for you</ion-label>
+    </div>
+    <div class="slider">
+      <swiper-container #swiper slides-per-view="1.2" centered-slides="true" space-between="10" initial-slide="1">
+        <swiper-slide *ngFor="let item of util.slidersList">
+          <div class="slide-image" [ngStyle]="{'background-image': 'url('+item+')'}"></div>
+        </swiper-slide>
+      </swiper-container>
+    </div>
+    <div class="title-list">
+      <ion-label class="head-title">Today's Pick</ion-label>
+      <ion-button (click)="onRecommendList()" fill="clear" shape="round" size="small">
+        See more
+      </ion-button>
+    </div>
+    <ion-row class="product-list">
+      <ion-col size="6" *ngFor="let item of util.productsList;let i = index;">
+        <div class="product-content" (click)="onProductInfo(i)">
+          <div class="badge"> <ion-label class="lbl-off">{{item.off}}%</ion-label> </div>
+          <div class="image" [ngStyle]="{'background-image': 'url('+item.images+')'}"></div>
+          <ion-label class="title">{{item.name}}</ion-label>
+          <ion-label class="value">{{item.value}}</ion-label>
+          <ion-label class="price"> <span class="active">₹ {{item.price}}</span> &nbsp; <span class="deactive">₹
+              296</span>
+          </ion-label>
+          <div class="add-btn" *ngIf="i % 2 == 0">
+            <div class="btn">
+              <ion-icon slot="icon-only" name="add-circle-outline" class="icon-name"></ion-icon>
+            </div>
+          </div>
+
+          <div class="cart-btn" *ngIf="i % 2 != 0">
+            <div class="btn">
+              <ion-icon slot="icon-only" name="remove-circle-outline" class="icon-name"></ion-icon>
+            </div>
+            <ion-label class="lbl">{{i}}</ion-label>
+            <div class="btn">
+              <ion-icon slot="icon-only" name="add-circle-outline" class="icon-name"></ion-icon>
+            </div>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
